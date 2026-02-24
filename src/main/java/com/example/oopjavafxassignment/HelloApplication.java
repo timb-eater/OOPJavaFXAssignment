@@ -3,6 +3,8 @@ package com.example.oopjavafxassignment;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -14,6 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 
 
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
@@ -52,10 +55,15 @@ public class HelloApplication extends Application {
 
         table.getColumns().addAll(idColumn, firstnameColumn, lastnameColumn, departmentColumn, majorColumn, emailColumn);
 
-        HBox hb = new HBox(table);
+        Image image1 = new Image(getClass().getResourceAsStream("images/icon.png"));
+        ImageView imageView1 = new ImageView(image1);
+        imageView1.setFitWidth(150);
+        imageView1.setPreserveRatio(true);
+
+        HBox hb = new HBox(imageView1, table);
         VBox vb = new VBox(mb, hb);
 
-        Scene scene = new Scene(vb, 320, 240);
+        Scene scene = new Scene(vb, 1024, 768);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
