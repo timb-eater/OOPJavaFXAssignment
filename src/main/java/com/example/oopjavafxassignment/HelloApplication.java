@@ -100,7 +100,8 @@ public class HelloApplication extends Application {
 
         Scene scene = new Scene(vb, 1024, 768);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        stage.setTitle("Full Stack Application");
+        stage.setScene(scene);
+        stage.setTitle("Front End");
         stage.show();
 
     }
