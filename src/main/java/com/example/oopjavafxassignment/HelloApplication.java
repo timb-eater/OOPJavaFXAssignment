@@ -55,13 +55,24 @@ public class HelloApplication extends Application {
         imageView1.setFitWidth(150);
         imageView1.setPreserveRatio(true);
 
-        TextField idField = new TextField("ID");
-        TextField firstnameField = new TextField("First Name");
-        TextField lastnameField = new TextField("Last Name");
-        TextField departmentField = new TextField("Department");
-        TextField majorField = new TextField("Major");
-        TextField emailField = new TextField("Email");
-        TextField imageField = new TextField("ImageURL");
+        VBox imageVbox = new VBox(imageView1);
+        imageVbox.setId("imageVbox");
+
+        //sets text fields on the right
+        TextField idField = new TextField();
+            idField.setPromptText("ID");
+        TextField firstnameField = new TextField();
+            firstnameField.setPromptText("First Name");
+        TextField lastnameField = new TextField();
+            lastnameField.setPromptText("Last Name");
+        TextField departmentField = new TextField();
+            departmentField.setPromptText("Department");
+        TextField majorField = new TextField();
+            majorField.setPromptText("Major");
+        TextField emailField = new TextField();
+            emailField.setPromptText("Email");
+        TextField imageField = new TextField();
+            imageField.setPromptText("ImageURL");
 
         Button clearButton = new Button("Clear");
         Button addButton = new Button("Add");
@@ -75,13 +86,16 @@ public class HelloApplication extends Application {
                 departmentField,
                 majorField,
                 emailField,
+                imageField,
 
                 clearButton,
                 addButton,
                 deleteButton,
                 editButton);
 
-        HBox hb = new HBox(imageView1, table, inputVBox);
+        inputVBox.setId("inputVbox");
+
+        HBox hb = new HBox(imageVbox, table, inputVBox);
         VBox vb = new VBox(mb, hb);
 
         Scene scene = new Scene(vb, 1024, 768);

@@ -1,9 +1,17 @@
 .button {
-    -fx-background-color: red;
+    -fx-background-color: brown;
     -fx-max-width: Infinity;
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 
-.hbox{
-    -fx-max-width: Infinity;
+.menu-bar {
+    -fx-background-color: brown;
+}
+
+#inputVbox {
+    -fx-background-color: green;
+}
+
+#imageVbox {
+    -fx-background-color: orange;
 }
