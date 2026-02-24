@@ -19,9 +19,21 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Menu fileMenu = new Menu("File");
+        MenuItem openItem = new MenuItem("Open");
+        fileMenu.getItems().add(openItem);
+
         Menu editMenu = new Menu("Edit");
+        MenuItem copyItem = new MenuItem("Open");
+        editMenu.getItems().add(copyItem);
+
         Menu themeMenu = new Menu("Theme");
+        MenuItem themeItem = new MenuItem("Change theme");
+        themeMenu.getItems().add(themeItem);
+
         Menu helpMenu = new Menu("Help");
+        MenuItem helpItem = new MenuItem("Get help");
+        helpMenu.getItems().add(helpItem);
+
 
         MenuBar mb = new MenuBar();
         mb.getMenus().add(fileMenu);
