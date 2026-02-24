@@ -3,17 +3,12 @@ package com.example.oopjavafxassignment;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuItem;
-
-import javafx.scene.control.TableView;
-import javafx.scene.control.TableColumn;
 
 
 import java.io.FileInputStream;
@@ -27,7 +22,7 @@ public class HelloApplication extends Application {
         fileMenu.getItems().add(openItem);
 
         Menu editMenu = new Menu("Edit");
-        MenuItem copyItem = new MenuItem("Open");
+        MenuItem copyItem = new MenuItem("Copy");
         editMenu.getItems().add(copyItem);
 
         Menu themeMenu = new Menu("Theme");
@@ -60,7 +55,33 @@ public class HelloApplication extends Application {
         imageView1.setFitWidth(150);
         imageView1.setPreserveRatio(true);
 
-        HBox hb = new HBox(imageView1, table);
+        TextField idField = new TextField("ID");
+        TextField firstnameField = new TextField("First Name");
+        TextField lastnameField = new TextField("Last Name");
+        TextField departmentField = new TextField("Department");
+        TextField majorField = new TextField("Major");
+        TextField emailField = new TextField("Email");
+        TextField imageField = new TextField("ImageURL");
+
+        Button clearButton = new Button("Clear");
+        Button addButton = new Button("Add");
+        Button deleteButton = new Button("Delete");
+        Button editButton = new Button("Edit");
+
+        VBox inputVBox = new VBox(
+                idField,
+                firstnameField,
+                lastnameField,
+                departmentField,
+                majorField,
+                emailField,
+
+                clearButton,
+                addButton,
+                deleteButton,
+                editButton);
+
+        HBox hb = new HBox(imageView1, table, inputVBox);
         VBox vb = new VBox(mb, hb);
 
         Scene scene = new Scene(vb, 1024, 768);
