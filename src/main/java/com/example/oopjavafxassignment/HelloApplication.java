@@ -85,7 +85,7 @@ public class HelloApplication extends Application {
         VBox vb = new VBox(mb, hb);
 
         Scene scene = new Scene(vb, 1024, 768);
-        stage.setTitle("Hello!");
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
 
