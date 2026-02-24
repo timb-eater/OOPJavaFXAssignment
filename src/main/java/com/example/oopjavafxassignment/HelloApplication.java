@@ -3,6 +3,7 @@ package com.example.oopjavafxassignment;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.MenuBar;
@@ -41,7 +42,18 @@ public class HelloApplication extends Application {
         mb.getMenus().add(themeMenu);
         mb.getMenus().add(helpMenu);
 
-        VBox vb = new VBox(mb);
+        TableView table = new TableView();
+        TableColumn idColumn = new TableColumn("ID");
+        TableColumn firstnameColumn = new TableColumn("First Name");
+        TableColumn lastnameColumn = new TableColumn("Last Name");
+        TableColumn departmentColumn = new TableColumn("Department");
+        TableColumn majorColumn = new TableColumn("Major");
+        TableColumn emailColumn = new TableColumn("Email");
+
+        table.getColumns().addAll(idColumn, firstnameColumn, lastnameColumn, departmentColumn, majorColumn, emailColumn);
+
+        HBox hb = new HBox(table);
+        VBox vb = new VBox(mb, hb);
 
         Scene scene = new Scene(vb, 320, 240);
         stage.setTitle("Hello!");
